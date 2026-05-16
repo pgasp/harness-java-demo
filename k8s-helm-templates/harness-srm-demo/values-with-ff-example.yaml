@@ -1,3 +1,0 @@
-env:
-  config:
-    HARNESS_FF_SDK_KEY: <+pipeline.variables.FeatureFlags_SDK_Key>
