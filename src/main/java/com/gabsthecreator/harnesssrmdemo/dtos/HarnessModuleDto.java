@@ -1,6 +1,6 @@
 package com.gabsthecreator.harnesssrmdemo.dtos;
 
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 public class HarnessModuleDto {
 

@@ -4,7 +4,7 @@ import com.gabsthecreator.harnesssrmdemo.models.HarnessModuleModel;
 import com.gabsthecreator.harnesssrmdemo.repositories.HarnessModuleRepository;
 import org.springframework.stereotype.Service;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
