@@ -52,5 +52,18 @@ template:
                 repo: pgasp/harness-java-demo
                 tags:
                   - latest
+          - step:
+              type: Run
+              name: Trivy Image Scan
+              identifier: Trivy_Image_Scan
+              spec:
+                connectorRef: pgasp_docker_hub
+                image: aquasec/trivy:latest
+                command: |
+                  trivy image \
+                    --severity CRITICAL \
+                    --exit-code 1 \
+                    --no-progress \
+                    pgasp/harness-java-demo:latest
   identifier: Maven_Build_Step
   versionLabel: v1
