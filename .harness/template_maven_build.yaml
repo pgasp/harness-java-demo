@@ -19,6 +19,24 @@ template:
         steps:
           - step:
               type: Run
+              name: Validate Base Image
+              identifier: Validate_Base_Image
+              spec:
+                connectorRef: pgasp_docker_hub
+                image: alpine:3.19
+                command: |
+                  APPROVED="eclipse-temurin:17 eclipse-temurin:17-jre-jammy eclipse-temurin:21 eclipse-temurin:21-jre-jammy"
+                  FROM=$(grep -m1 '^FROM' Dockerfile | awk '{print $2}')
+                  echo "Image détectée : $FROM"
+                  if echo "$APPROVED" | grep -qw "$FROM"; then
+                    echo "✅ Image approuvée"
+                  else
+                    echo "❌ Image non approuvée : $FROM"
+                    echo "Images autorisées : $APPROVED"
+                    exit 1
+                  fi
+          - step:
+              type: Run
               name: Maven Build and Test
               identifier: Maven_Build_and_Test
               spec:
