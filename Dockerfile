@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
