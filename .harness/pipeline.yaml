@@ -60,6 +60,14 @@ pipeline:
           deploymentType: Kubernetes
           service:
             serviceRef: harnessjavademo
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
           environment:
             environmentRef: dev
             deployToAll: false
