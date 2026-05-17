@@ -54,12 +54,12 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: harness_java_demo  # Settings > Services > colonne ID
+            serviceRef: harnessjavademo
           environment:
             environmentRef: dev
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: dev_k8s        # Environment dev > Infrastructures > colonne ID
+              - identifier: devk8s
           execution:
             steps:
               - stepGroup:
