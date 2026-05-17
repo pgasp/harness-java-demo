@@ -46,7 +46,6 @@ pipeline:
                     repo: pgasp/harness-java-demo
                     tags:
                       - latest
-                      - <+pipeline.sequenceId>
     - stage:
         name: Deploy
         identifier: Deploy
