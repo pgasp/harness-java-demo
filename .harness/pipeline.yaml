@@ -51,6 +51,12 @@ pipeline:
         name: Deploy
         identifier: Deploy
         type: Deployment
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
         spec:
           deploymentType: Kubernetes
           service:
